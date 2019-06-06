@@ -1,0 +1,4 @@
+5 ART
+6 LOC
+7 TIM
+8 CON

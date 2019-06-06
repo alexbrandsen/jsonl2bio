@@ -8,7 +8,4 @@ This script assumes content has been tokenised before uploading to Doccano (i.e.
 
 Will produce multiple files if annotations from multiple users are present
 
-Needs a file containing translations of Docanno user IDs to required BIO tag, separated by spaces, 1 tag per line. Example:
-
-7 PER
-8 LOC
+Needs a file containing translations of Docanno user IDs to required BIO tag, separated by spaces, 1 tag per line. Example can be found in the tagtable.txt file.
