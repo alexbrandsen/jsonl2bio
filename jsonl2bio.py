@@ -31,7 +31,7 @@ for tag in tagTableTemp:
 
 # see how many users we've got
 jsonAsText = open(inputFileLocation).read()
-regex = r"\"user\": (.)}"
+regex = r"\"user\": (\d+)}"
 matches = re.finditer(regex, jsonAsText, re.MULTILINE)
 userIds = []
 for matchNum, match in enumerate(matches, start=1):
@@ -61,7 +61,7 @@ for userId in userIds:
                 previousAnnId = 0
                 for char in obj['text']+' ': # add space at end so we can annotate last word
                     if char == " ":
-                        if i in annotatedCharacters: # this space is at the end of an annotated word
+                        if i in annotatedCharacters and (i-1) in annotatedCharacters: # this space is at the end of an annotated word
                             tag = annotatedCharacters[i]['label']
                             if previousAnnId is annotatedCharacters[i]['id']:
                                 BorI = "I-"
